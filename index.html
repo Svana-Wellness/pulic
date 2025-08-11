@@ -2,40 +2,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Svana Wellness</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header class="site-header">
-    <img src="Logo.png" alt="Svana Logo" class="logo" />
-    <h1 class="site-title">Svana Wellness</h1>
-    <p class="site-subtitle">Breathe in stillness today…</p>
+  <header class="header-hero">
+    <div class="header-overlay"></div>
+    <div class="header-inner header-flex">
+      <img src="Logo.png" alt="Svana Logo" class="logo-left"/>
+      <div class="brand-content">
+        <h1 class="brand-name">Svana Wellness</h1>
+        <h2 class="tagline">Breathe in stillness today…</h2>
+        <p id="dayLabel" class="day-label"></p>
+      </div>
+    </div>
   </header>
 
-  <main class="card-grid">
-    <a href="video1.html" class="card" style="background-image: url('morning.png');">
-      <div class="card-label">Morning Yoga</div>
-      <div class="card-footer">
-        <span class="card-title">5-Min Sunrise Flow</span>
-        <span class="card-duration">6m 30s</span>
-      </div>
-    </a>
-    <a href="video2.html" class="card" style="background-image: url('breathwork.png');">
-      <div class="card-label">Breathwork</div>
-      <div class="card-footer">
-        <span class="card-title">Deep Calm Breath</span>
-        <span class="card-duration">8m 12s</span>
-      </div>
-    </a>
-    <a href="video3.html" class="card" style="background-image: url('meditation.png');">
-      <div class="card-label">Meditation</div>
-      <div class="card-footer">
-        <span class="card-title">Guided Stillness</span>
-        <span class="card-duration">10m 45s</span>
-      </div>
-    </a>
+  <main>
+    <div class="tiles">
+      <a id="tile-morning" class="tile" href="#">
+        <img src="Morning.png" alt="Morning Yoga Thumbnail"/>
+        <div class="tile-text">
+          <h3>Morning Yoga – Prātibha Yoga</h3>
+          <p id="morningMeta">Loading…</p>
+        </div>
+      </a>
+
+      <a id="tile-breathwork" class="tile" href="#">
+        <img src="breathwork.png" alt="Breathwork Thumbnail"/>
+        <div class="tile-text">
+          <h3>Breathwork – Nāḍī Shuddhi</h3>
+          <p id="breathworkMeta">Loading…</p>
+        </div>
+      </a>
+
+      <a id="tile-meditation" class="tile" href="#">
+        <img src="meditation.png" alt="Meditation Thumbnail"/>
+        <div class="tile-text">
+          <h3>Meditation – Dhyāna</h3>
+          <p id="meditationMeta">Loading…</p>
+        </div>
+      </a>
+
+      <a id="tile-spiritual" class="tile" href="#">
+        <img src="spiritual.png" alt="Spiritual Talks Thumbnail"/>
+        <div class="tile-text">
+          <h3>Spiritual Talks</h3>
+          <p id="spiritualMeta">Loading…</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="past.html">Past videos</a>
+    </div>
   </main>
+
+  <div id="playerModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+      <button class="close-btn" data-close aria-label="Close">&times;</button>
+      <h3 id="playerTitle"></h3>
+      <div class="player-wrap">
+        <iframe id="ytFrame" width="100%" height="100%" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
